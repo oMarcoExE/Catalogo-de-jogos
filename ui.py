@@ -12,7 +12,7 @@ class UI:
         print()
 
     def mostrarMenu(self):
-        print("1- Adiconar gamee a biblioteca")
+        print("1- Adiconar game a biblioteca")
         print("2- Ver biblioteca")
         print("0- Sair")
         print()
@@ -46,7 +46,7 @@ class UI:
         
         titulo = self.solicitaValor("Digite o titulo* ", 'texto', False)
         genero = self.solicitaValor("Digite o gênero ", 'texto', True)
-        desenvolvedora = self.solicitaValor("Digite a desenvolvedora ", 'numero', True)
+        desenvolvedora = self.solicitaValor("Digite a desenvolvedora ", 'texto', True)
         distribuidora = self.solicitaValor("Digite o distribuidora ", 'texto', True)
         ano = self.solicitaValor("Digite o ano* ", 'numero', False)
 
@@ -78,3 +78,18 @@ class UI:
                return self.solicitaValor(legenda, tipo, permiteNulo)
         return valor
 
+    def Biblioteca(self):
+        self.logo()
+
+        print("Veja abaixo sua biblioteca de jogos. ")
+        print("- - - - - - - - - - - - - - -")
+
+        jogos = self.banco.buscarDados('jogos')
+        print()
+        for jogo in jogos:
+            id, titulo, genero, desenvolvedora, distribuidora, ano = jogo
+
+            print(f"Jogo {id} - {titulo} || {ano}")
+
+        print()
+        input("Aperte Enter para continuar")

@@ -15,4 +15,6 @@ while opcao != 0:
         opcao = ""
 
     if opcao == 2:
-        pass
+        dUi.Biblioteca()
+        opcao = ""
+        dUi.limparTela
